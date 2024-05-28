@@ -11,14 +11,19 @@ html(lang="pt-br")
             h1 Escola ACME
         main
             nav
-                ul
-                    li Turmas
-                    li Alunos
-                    li Professores
+                button(onclick="window.location.href='/'") Turmas
+                button(onclick="window.location.href='/aluno'") Alunos
+                button(onclick="window.location.href='/professores'") Professores
             div(class="container")
                 each turma in turmas
                     div(class="card")
-                        p(class="titulo") #{turma.id} - #{turma.abreviacao}
-                        p(class="dados") #{turma.abreviacao}
+                        p(class="titulo")
+                            b Turma:
+                            i #{turma.abreviacao}
                         p(class="dados") #{turma.nome}
+                        p(class="dados")
+                            b Id da turma:
+                            i #{turma.id}
+                        button Detalhes
         footer
+            h2 By Prof. Wellington
