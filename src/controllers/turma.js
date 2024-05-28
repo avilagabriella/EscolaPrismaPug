@@ -6,6 +6,18 @@ const iniciar = async (req, res) => {
     res.render('index', { turmas: turmas });
 }
 
+const create = async(req, res) => {
+    const turma = await prisma.turma.create({
+        data:req.body
+})
+    res.redirect('/');
+}
+
+
+
+
+
 module.exports = {
-    iniciar
+    iniciar,
+    create,
 }
